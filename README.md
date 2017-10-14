@@ -11,7 +11,7 @@ This project is intented to be a community effort, and I am looking for voluntee
 
 As of 2017.10.10 this project supports the training of a virtual car (referred to as the Basic Car in the following text) in a 3D AirSim environment, using the DQN deep reinforcement learning algorithm. A video showing the result after 800 episodes of training can be found here:
 
-[![Demo Video](https://img.youtube.com/vi/InrQgdU8rQs/0.jpg)](https://www.youtube.com/watch?v=InrQgdU8rQs&feature=youtu.b)
+[![Demo Video](https://github.com/kaihuchen/DRL-AutonomousVehicles/blob/master/cardemo.jpg)](https://www.youtube.com/watch?v=InrQgdU8rQs&feature=youtu.b)
 
 This experiment is built with the following components:
 
