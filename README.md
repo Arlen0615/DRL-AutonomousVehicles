@@ -1,14 +1,13 @@
-#### DRL-AutonomousVehicles: autonomous vehicle navigation based on Deep Reinforcement Learning
+## Autonomous vehicle navigation based on Deep Reinforcement Learning
 
 This project is about training a vehicle, such as a car or a drone, to navigate in 3D space (either real world, or photo-realistic virutal ones) autonomously based on the principle of Deep Reinforcement Learning. 
 
 For example, a car can be trained via rewards and punishments in order acquire the skill needed to drive around all by itself for as long as possible without hitting anything. 
 In other words, the car is only given high-level goals in the form of rewards (e.g., when it goes fast and long) and punishments (e.g., when it collides with anything), and it is entirely up to the car to learn the driving skills needed in order to achieve the goals.
 
-
 This project is intented to be a community effort, and I am looking for volunteers to contribute to the project (see tasks below).
 
-**Getting Started - A Basic Experiment**
+### Getting Started - A Basic Experiment
 
 As of 2017.10.10 this project supports the training of a virtual car (referred to as the Basic Car in the following text) in a 3D AirSim environment, using the DQN deep reinforcement learning algorithm. A video showing the result after 800 episodes of training can be found here:
 
@@ -31,21 +30,21 @@ It is worth noting that:
 - The car will go over curbs and lawns, and it is simply because the primitive sensors provided is not sufficient to allow the car to see the differences.
 - The car does not obey any traffic laws, since it is not being given sufficient sensory power to recognize anything.
 
-**To setup this experiment:**
+### To setup this experiment:
 
 1. Download this repository
 2. Install the [Microsoft AimSim simulator](https://github.com/Microsoft/AirSim)
 3. Install the [OpenAI Gym](https://github.com/openai/gym)
 4. Install the [OpenAI Baselines](https://github.com/openai/baselines)
 
-**To train the virtual car:**
+### To train the virtual car:
 
 1. Edit myAirSimCarClient.py so that the line **sys.path.append('../AirSim/PythonClient')** is either removed (if not needed), or is pointing to where you have install AirSim.
 1. Configure AirSim's configuration file (settings.json) to use the Car mode. A sample settings.json is provided in this repository.
 1. Start the AirSim Neighborhood environment. 
 1. Start the training: python3 gocar.py. At this point you should see the car begin to train in realtime, starting with running into everything, but should exhibit reasonable (but not perfect) baheavior in 800 episodes or so.
 
-**Further experiments**
+### Further experiments
 
 The experiment above demonstrates that RL can work welll in the context of a virtual 3D realworld-like environment. There are much more work to be done, and I am **looking for volunteers** to take them on. If you manage to complete any of the following task, please by all means submit a pull request so that the community can share with your contribution.
 
@@ -61,10 +60,10 @@ The basic car is given only the control of the steering, but nothing else (such 
 1. **Navigate with raw pixels**.
 The original DQN was trained to play the Atari 2600 games with nothing but raw pixels as its input. The Basic Car uses only a number of simple depth sensors as a way to get something working first. It would be great to upgrade the Basic Car to learn from the raw pixels.
 1. **Staying on the road**.
-The Basic Car has the tendency to drive all over the place, including going over curbs and grasses.
+The Basic Car has the tendency to drive all over the place, including going over curbs and grassy areas.
 This is because its primitive sensors won't allow it to distinguish between roadway, curbs, and grasses. The goal for this experiment is to keep the car strictly on the road but giving it access to the camera and segmentation map, and train it to avoid curbs and grasses.
 1. **Flying drones**.
 Applying the enhancements above to fly an AirSim Multirotor drone.
 1. **Following traffic laws (to some degree)**.
-1. ** Applying trained models to a real car or drone**.
+1. **Applying trained models to a real car or drone**.
 
