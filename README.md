@@ -41,7 +41,7 @@ The above has been tested only under Python 3.5
 
 ### To train the virtual car:
 
-1. Configure AirSim's configuration file (settings.json) to use the Car mode. A sample settings.json is provided in this repository.
+1. Configure AirSim's configuration file (settings.json) to use the Car mode. Two sample settings.json file are provided in this repository for starting AirSim in either the Car or the MultiRotor mode.
 1. Start the AirSim Neighborhood environment. 
 1. Start the training: execute **python3 gocar.py**. At this point you should see the car begin to train in realtime, starting with running into things very quickly, but should exhibit reasonable (but not perfect) baheavior in 800 episodes or so.
 
@@ -65,6 +65,7 @@ The Basic Car has the tendency to drive all over the place, including going over
 This is because its primitive sensors won't allow it to distinguish between roadway, curbs, and grasses. The goal for this experiment is to keep the car strictly on the road by giving it access to the camera and segmentation map, and train it to avoid curbs and grasses.
 1. **Flying drones**.
 Applying the enhancements above to fly an AirSim Multirotor drone.
+1. **Virtual Pet mode**. Add keyboard reward/penalty commands, so that a user is able to apply reward or penalty when justified. Here it is entirely up to the user to decide when to apply rewards/penalties. The challenge here is that invariably there will be delay in the application of the rewards/penalties.
 1. **Following traffic laws (to some degree)**.
 1. **Applying trained models to a real car or drone**.
-
+1. **Real Pet mode**. Combine a real vehicle with vision and the Virtual Pet mode mentioned above, and train the vehicle to navigate towards people, to favor happy facial expressions from people, and to recognize the identify of people.
