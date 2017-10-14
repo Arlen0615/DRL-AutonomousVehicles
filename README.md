@@ -1,4 +1,4 @@
-**DRL-AutonomousVehicles: autonomous vehicle navigation based on Deep Reinforcement Learning**
+### DRL-AutonomousVehicles: autonomous vehicle navigation based on Deep Reinforcement Learning
 
 This project is about training a vehicle, such as a car or a drone, to navigate in 3D space (either real world, or photo-realistic virutal ones) autonomously based on the principle of Deep Reinforcement Learning. 
 
@@ -47,22 +47,22 @@ To train the virtual car:
 
 The experiment above demonstrates that RL can work welll in the context of a virtual 3D realworld-like environment. There are much more work to be done, and I am looking for volunteers to take them on. If you manage to complete any of the following task, please by all means submit a pull request so that the community can share with your contribution.
 
-1. Add more depth sensors
+1. **Add more depth sensors**.
 The Basic Car (i.e., the car described in the basic experiment above) is based on only three primitive sensors, thus it has the tendency to miss skinny poles, or not seeing obstables when turning fast. The car should be able to perform better if fitted with more depth sensors (e.g., more to the front and sides).
-1. Smoother driving
+1. **Smoother driving**.
 The Basic Car drives erratically mainly because it has no sensors to measure 'smoothness', and it is not being rewarded for smoother driving. This can addressed by adding related sensors, such as G-force sensor, tilt sensor, etc., plus appropriate rewarding formula.
-1. Reload and continue training
+1. **Reload and continue training**.
 For the purpose of long term research, it is imperitive that to be able to reload the model from the last training session, and then continue with the training. An example for such a need is long term training often require intensive training in a particular narrow area that requires reseting the environment. For example, after the basic car acquires the basic driving skill, it usually do well on the open streets but no so good in tight corners. If left unattended the training tend to take longer and longer to converge, since it takes a long time for the car to get to places with tight corners where the car can learn something new. One way to address this is to identify a number of training grounds useful for the purpose, then reset the training session to start on such intensive training grounds. This cannot be achieved without the "continue training" capability.
 As of this writing the deepq method in OpenAI Baselines does not support a way to reload a previously trained model to continue with training. There are some possible solution mentioned here but needs to be confirmed. 
-1. Support multi-dimensional actions
+1. **Support multi-dimensional actions**.
 The basic car is given only the control of the steering, but nothing else (such as throttle, brake, etc.). It is preferrable that it can control many more, but the deepq currently does not support it. We either need to improve deepq to make it support multi-dimensional action space, or try out other RL algorithms.
-1. Navigate with raw pixels
+1. **Navigate with raw pixels**.
 The original DQN was trained to play the Atari 2600 games with nothing but raw pixels as its input. The Basic Car uses only a number of simple depth sensors as a way to get something working first. It would be great to upgrade the Basic Car to learn from the raw pixels.
-1. Staying on the road
+1. **Staying on the road**.
 The Basic Car has the tendency to drive all over the place, including going over curbs and grasses.
 This is because its primitive sensors won't allow it to distinguish between roadway, curbs, and grasses. The goal for this experiment is to keep the car strictly on the road but giving it access to the camera and segmentation map, and train it to avoid curbs and grasses.
-1. Flying drones
+1. **Flying drones**.
 Applying the enhancements above to fly an AirSim Multirotor drone.
-1. Following traffic laws (to some degree)
-1. Applying trained models to a real car or drone
+1. **Following traffic laws (to some degree)**.
+1.** Applying trained models to a real car or drone**.
 
