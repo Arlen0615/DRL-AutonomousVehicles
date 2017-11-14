@@ -39,6 +39,8 @@ It is worth noting that:
 
 The above has been tested only under Python 3.5
 
+[Setup AirSim on Ubuntu (Chinese Blog)](https://medium.com/p/223de9a0fc4b/edit)
+
 ### To train the virtual car:
 
 1. Configure AirSim's configuration file (settings.json) to use the Car mode. Two sample settings.json file are provided in this repository for starting AirSim in either the Car or the MultiRotor mode.
