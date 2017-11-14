@@ -14,6 +14,7 @@ def main():
     model = deepq.models.mlp([64], layer_norm=True)
     
     print("\n======= Training session starts for DQN Car =======")    
+    trainedModel = "car.pkl"
     act = deepq.learn(
         env,
         q_func=model,
@@ -26,9 +27,9 @@ def main():
         param_noise=True,
         checkpoint_freq=2,
         learning_starts=5,
-        callback=callback
+        callback=callback,
+        load_state=trainedModel
     )
-    trainedModel = "car.pkl"
     print("\nSaving model to", trainedModel)
     act.save(trainedModel)
 
